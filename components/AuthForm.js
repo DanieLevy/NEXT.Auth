@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
 import { toast } from 'react-toastify';
-import SignInWithGoogle from './signInWithGoogle';
+import SignInWithGoogle from './SignInWithGoogle';
 import { useRouter } from 'next/router';
 
 
