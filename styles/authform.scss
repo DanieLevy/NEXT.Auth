@@ -1,0 +1,266 @@
+// Variables
+$primary-color: #0d0d0dc0;
+$secondary-color: #f0f0f0;
+$text-color: #333;
+$input-bg: #f9f9f9;
+$transition-duration: 0.5s; // Define a variable for the transition duration
+
+// Mixins
+@mixin input-styles {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid $secondary-color;
+    background-color: $input-bg;
+    font-size: 14px;
+    transition: border-color $transition-duration ease;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
+}
+
+// Styles
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    padding: 0 20px;
+    transition: all $transition-duration ease; // Add transition for smooth resize
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    transition: all $transition-duration ease; // Add transition for smooth resize
+
+    &__title {
+        text-align: center;
+        color: $primary-color;
+        margin-bottom: 20px;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+    }
+
+    &__input {
+        @include input-styles;
+        width: 100%;
+        margin-bottom: 12px;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+
+        &-input {
+            margin-right: 6px;
+        }
+
+        &-label {
+            font-size: 12px;
+            color: $text-color;
+            transition: all $transition-duration ease; // Add transition for smooth resize
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: 10px;
+        background-color: #5856d6;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color $transition-duration ease;
+
+        &:hover {
+            background-color: darken(#5856d6, 10%);
+        }
+    }
+}
+
+.auth_inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    transition: all $transition-duration ease; // Add transition for smooth resize
+
+    &.hidden {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.0s ease; // Add transition for smooth resize
+
+
+    }
+
+    // &.name {
+    //     margin-bottom: 20px;
+    // }
+
+    h2 {
+        font-size: 12px;
+        font-weight: 100;
+        margin-bottom: 6px;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+    }
+}
+
+.auth_options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all $transition-duration ease; // Add transition for smooth resize
+
+    * {
+        font-size: 10px;
+        color: $text-color;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+    }
+
+    a {
+        color: rgba(113, 113, 113, 0.75);
+        text-decoration: none;
+        transition: color $transition-duration ease;
+
+        &:hover {
+            color: darken($primary-color, 10%);
+        }
+    }
+}
+
+.google-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $secondary-color;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color $transition-duration ease;
+    margin-bottom: 12px;
+    transition: all $transition-duration ease; // Add transition for smooth resize
+
+    &:hover {
+        border-color: rgba(115, 115, 115, 0.5);
+    }
+
+    svg {
+        margin-right: 6px;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 12px;
+        background-color: #fff;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+    }
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    transition: all $transition-duration ease; // Add transition for smooth resize
+
+    &.spacer {
+        margin: 20px 0px;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &__line {
+        flex: 1;
+        height: 1px;
+        background-color: #e2e8f0;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+
+        @media (prefers-color-scheme: dark) {
+            border-color: #718096;
+        }
+
+        @media (min-width: 768px) {
+            width: 25%;
+        }
+
+        &:first-of-type {
+            margin-right: 0.5rem;
+        }
+
+        &:last-of-type {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__link {
+        font-size: 0.75rem;
+        color: #718096;
+        text-transform: uppercase;
+        text-decoration: underline;
+        cursor: pointer;
+        transition: all $transition-duration ease; // Add transition for smooth resize
+
+        @media (prefers-color-scheme: dark) {
+            color: #a0aec0;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Media queries for responsiveness
+@media (max-width: 600px) {
+    .auth-form {
+        padding: 16px;
+    }
+
+    .auth-form__title {
+        font-size: 18px;
+    }
+
+    .auth-form__input,
+    .google-container {
+        width: 100%;
+    }
+
+    .auth-form__button {
+        font-size: 12px;
+    }
+
+    .auth_options * {
+        font-size: 10px;
+    }
+
+    .auth_inputs h2 {
+        font-size: 12px;
+    }
+}

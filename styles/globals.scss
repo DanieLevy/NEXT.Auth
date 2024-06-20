@@ -1,0 +1,85 @@
+// Global Settings and CSS Reset
+
+// Box-sizing reset
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// Remove default margin and padding
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure, hr, fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+// Remove list styles on ul, ol elements with a class attribute
+ul[class], ol[class] {
+  list-style: none;
+}
+
+// Set core body defaults
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+// Inherit line-height to all elements
+*,
+*::before,
+*::after {
+  line-height: inherit;
+}
+
+// Remove default border on all elements
+* {
+  border: 0;
+}
+
+// Reset input and button styles
+input, button, textarea, select {
+  font: inherit;
+}
+
+// Prevent text overflows
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+// Create a root stacking context
+#root, #__next {
+  isolation: isolate;
+}
+
+// Reset tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Set default styles for images
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+// Reset links
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Reset form elements
+button, input, select, textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+// Reset SVG fill color
+svg {
+  fill: currentColor;
+}
