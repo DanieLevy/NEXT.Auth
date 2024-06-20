@@ -2,9 +2,9 @@
   "name": "my-next-app",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
